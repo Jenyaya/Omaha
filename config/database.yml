@@ -9,6 +9,20 @@ development:
   pool: 5
   timeout: 5000
 
+oracle_E04:
+  adapter: oracle_enhanced
+  database: IDMAN6T
+  username: readonly
+  password: r3ad0nly
+
+
+oracle_E05:
+  adapter: oracle_enhanced
+  database: IDMAN3T
+  username: readonly
+  password: r3ad0nly
+
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.

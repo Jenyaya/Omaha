@@ -1,4 +1,20 @@
 Omaha::Application.routes.draw do
+  #resources :users
+
+  # get "users/getusers"
+
+  get "pages/searchusers"
+  get "pages/foundusers"
+  get "pages/runquery"
+  get "pages/foundbyquery"
+
+  root :to => 'pages#searchusers'
+
+  match '/search', :to => 'pages#searchusers'
+  match '/found', :to => 'pages#foundusers'
+  match '/runquery', :to => 'pages#runquery'
+  match '/foundbyquery', :to => 'pages#foundbyquery'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

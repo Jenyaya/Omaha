@@ -1,0 +1,51 @@
+<h2>Search Users:</h2>
+
+<%= form_tag("/found", :id => 'search-form', :method => "get") do %>
+
+    <table>
+
+      <tr>
+        <td>   <%= label_tag(:database, "Select database") %> </td>
+        <td><%= select_tag(:database, options_for_select([['SAM E04', 'IDMAN6T'], ['SAM E05', 'IDMAN3T'],], 1)) %></td>
+        <td></td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <%= label_tag(:username, "Username like") %>
+        </td>
+        <td>
+          <%= text_field_tag(:username) %>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <%= label_tag(:date, "Date created") %>
+        </td>
+        <td>
+          <%= text_field_tag(:date) %>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>
+          <%= label_tag(:entitlement, "Entitlement") %>
+        </td>
+        <td><%= text_field_tag(:entitlement) %></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><%= submit_tag("Run Query", :class => "run_query") %></td>
+        <td></td>
+      </tr>
+
+    </table>
+
+
+
+<% end %>

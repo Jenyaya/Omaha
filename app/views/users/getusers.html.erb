@@ -1,0 +1,15 @@
+<h1>Get Users:</h1>
+
+
+<%= form_tag("/found", :method => "get") do %>
+
+    <%= label_tag(:username, "Username like:") %>
+  <%= text_field_tag(:username) %><br>
+  <%= label_tag(:date, "Date created:") %>
+  <%= text_field_tag(:date) %><br>
+    <%= label_tag(:entitlement, "Entilement:") %>
+  <%= text_field_tag(:entitlement) %><br>
+
+
+  <%= submit_tag("Search") %>
+<% end %>

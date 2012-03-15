@@ -1,0 +1,32 @@
+<h2>Run Query:</h2>
+
+<%= form_tag("/foundbyquery", :id => 'search-form', :method => "get") do %>
+
+    <table>
+
+      <tr>
+        <td>   <%= label_tag(:database, "Select database") %> </td>
+        <td><%= select_tag(:database, options_for_select([['SAM E04', 'IDMAN6T'], ['SAM E05', 'IDMAN3T'],], 1)) %></td>
+        <td></td>
+      </tr>
+
+
+
+      <tr>
+        <td>
+          <%= label_tag(:query, "Type your query") %>
+        </td>
+        <td><%= text_area_tag(:query) %></td>
+      </tr>
+
+      <tr>
+        <td></td>
+        <td><%= submit_tag("Run Query", :class => "run_query") %></td>
+        <td></td>
+      </tr>
+
+    </table>
+
+
+
+<% end %>
