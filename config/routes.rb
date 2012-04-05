@@ -7,6 +7,7 @@ Omaha::Application.routes.draw do
   get "pages/foundusers"
   get "pages/runquery"
   get "pages/foundbyquery"
+  get "pages/partyid"
 
   root :to => 'pages#searchusers'
 
@@ -14,6 +15,9 @@ Omaha::Application.routes.draw do
   match '/found', :to => 'pages#foundusers'
   match '/runquery', :to => 'pages#runquery'
   match '/foundbyquery', :to => 'pages#foundbyquery'
+  match '/partyid', :to => 'pages#partyid'
+  match '/entitlements', :to => 'pages#entitlements'
+  match '/entitlementsfile', :to => 'pages#entitlementsfile'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,21 @@
+<div class title="result">
+  <h4> <%= @response.length-1 %> records found</h4>
+
+
+  <table class="datagrid">
+
+    <% @response.first.each do |header| %>
+
+        <th> <%= header %>  </th>
+    <% end %>
+    <% @response.shift %>
+    <% @response.each do |row| %>
+        <tr>
+          <% row.each do |column| %>
+              <td><%= column %></td>
+          <% end %>
+        </tr>
+    <% end %>
+  </table>
+
+</div>

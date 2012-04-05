@@ -1,0 +1,30 @@
+<h2>Get user entitlements</h2>
+
+<%= form_tag("/entitlements", :id => 'partyid-form', :method => "get") do %>
+
+    <table class="form_table">
+
+      <tr>
+        <td><%= label_tag(:partyid, "Enter PartyID:") %></td>
+        <td><%= text_field_tag(:partyid) %></td>
+        <td><%= submit_tag("Get Entitlements", :class => "get_ent") %></td>
+      </tr>
+
+
+    </table>
+
+<% end %>
+
+
+<%= form_tag("/entitlementsfile", :id => 'partyid-form2', :method => "get") do %>
+
+
+
+    <table class="form_table">
+       <tr>
+        <td> <%= submit_tag("Entitlements from file", :class => "get_ent_file") %></td>
+      </tr>
+
+    </table>
+
+<% end %>

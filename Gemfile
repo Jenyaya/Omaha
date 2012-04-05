@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'rspec-rails'
 gem 'ruby-oci8'
 gem 'activerecord-oracle_enhanced-adapter'
+gem 'json'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

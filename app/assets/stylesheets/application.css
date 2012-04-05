@@ -6,48 +6,44 @@
  *= require_tree . 
 */
 body {
-	margin-top: 20px;
-	padding: 0;
-	background: #ffffff;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	color: #444444;
+    margin-top: 20px;
+    padding: 0;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #444444;
 }
-
 
 #header {
-	width: 960px;
-	height: 30px;
+    width: 600px;
+    height: 30px;
+    font: normal 18px/150% "Trebuchet MS", Helvetica, sans-serif;
+    padding-left: 25px;
+    background-color: #99ccff
 
 }
 
+a {
+    padding-right: 15px;
+}
 
+#partyid-form, #partyid-form2  {
+ background-color: #99ccff;
+ width: 625px;
+}
 
 h1, h2, h3 {
-	margin: 10px;
-	padding: 10px;
-	text-transform: uppercase;
-	font-family: 'Oswald', sans-serif;
-	font-weight: normal;
-	color: #2483A6;
+    margin: 10px;
+    padding: 10px;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    color: #2483A6;
 }
 
-h1 {
-	font-size: 2em;
-}
-
-h2 {
-	font-size: 2.4em;
-}
-
-h3 {
-	font-size: 1.6em;
-}
-
-
-input.run_query {
-    	margin: 10px;
-	padding: 10px;
+input.run_query, input.get_ent {
+    margin: 10px;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -60,38 +56,93 @@ input.run_query {
 
 }
 
-h3 {
-    color: #6666ff;
-    text-align: left;
+input.get_ent_file {
+    margin: 10px;
+    padding: 10px;
+    margin-left: 300px;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+    width: 190px;
+    color: #fff;
+    background: #006400;
     font-size: 120%;
     font-weight: bold;
-    padding: 20px;
+
 }
 
 label {
     text-align: left;
-    font-size: 120%;
+    font-size: 100%;
     font-weight: bold;
     padding: 20px;
 
 }
 
-.datagrid {
+.datagrid, .ent_datagrid {
     font: normal 12px/150% Arial, Helvetica, sans-serif;
-    background: #ffffff;
+    background: #cccc00;
     overflow: hidden;
     border: 1px solid #006699;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
 
+th.datagrid {
+    font-weight: bold;
+}
 
 textarea {
-	width: 600px;
-	height: 220px;
-	border: 1px solid #cccccc;
-	padding: 5px;
-	font-family: Tahoma, sans-serif;
+    width: 600px;
+    height: 220px;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
 
+}
+
+/*table, td {*/
+/*border-width: 1px;*/
+
+/*}*/
+
+.no_result {
+
+    margin: 10px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    width: 500px;
+    color: #999999;
+    background: #cccccc;
+    font-size: 120%;
+    font-weight: normal;
+
+}
+
+.query {
+    font: normal 14px/150% "Trebuchet MS", Helvetica, sans-serif;
+    width: 600px;
+    border: 1px solid #006699;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #99ccff;
+    padding-left: 20px;
+
+}
+
+.query_info {
+    color: #2483A6;
+}
+
+.found_users, .found_by_query_users  {
+
+  padding-left: 50px;
+}
+
+div.ent {
+  color: #2483A6;
+  padding-left: 50px;
 }

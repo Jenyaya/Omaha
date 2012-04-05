@@ -1,29 +1,14 @@
-<h1>Found Users:</h1>
+<h2>Users found</h2>
 <div class='found_users'>
 
-  <div>
-    <h3>Database: <%=@db %></h3>
-    <h4> <%=@time %> seconds</h4>
-    <h4> <%=@response.length-1 %> records found</h4>
-    <!--<h3>User's parameters:</h3>-->
-    <h4><%= @query %></h4>
-    <!--<h4><%= @date %></h4>-->
-    <!--<h4><%= @entitlement %></h4>-->
+  <%= render 'layouts/queryinfo' %>
+  <%= render 'layouts/query' %>
 
-
-  </div>
-
-
-
-  <table class="datagrid">
-    <% @response.each do |row| %>
-        <tr>
-          <% row.each do |column| %>
-              <td><%= column %></td>
-          <% end %>
-        </tr>
-    <% end %>
-  </table>
+  <% if !@response.empty? %>
+      <%= render 'layouts/result_table' %>
+  <% else %>
+      <%= render 'layouts/noresult' %>
+  <% end %>
 
 </div>
 

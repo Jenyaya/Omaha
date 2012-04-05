@@ -1,0 +1,22 @@
+<div class="user_ent_file">
+  <table class="ent_datagrid">
+    <tr>
+      <th>PartyID</th>
+      <th>Entitlements</th>
+    </tr>
+
+
+    <% @user_ent.each { |ent| %>
+
+        <% ent.each { |key, value| %>
+            <tr>
+              <td><%= key %></td>
+              <td><%= value %></td>
+            </tr>
+        <% } %>
+    <% } %>
+
+
+  </table>
+
+</div>
