@@ -34,19 +34,19 @@ describe "Pages" do
 
   describe "Found user's page'" do
 
-    before {
-
-      db = "IDMAN6T"
-      username = "TESTUSER2"
-      date = "15-MAR-2012"
-      entitlement = "appSkyGo"
-      @request = Page.get_objects(db, username, date, entitlement)
-    }
-
-    subject { @request }
+  #  before {
+  #
+  #    db = "IDMAN6T"
+  #    username = "TESTUSER2"
+  #    date = "15-MAR-2012"
+  #    entitlement = "appSkyGo"
+  #    @request = Page.get_objects(db, username, date, entitlement)
+  #  }
+  #
+  #  subject { @request }
 
     it "should have Search Users text" do
-      visit "/pages/foundusers"
+      visit "/pages/foundusers?database=IDMAN6T&username=TESTUSER2&date=15-MAR-2012&entitlement=appSkyGo&commit=Run+Query"
       page.should have_content('Found Users')
     end
 
@@ -95,9 +95,14 @@ describe "Pages" do
     it "should have PartyId text area and button" do
       visit partyid_path
       # puts page.body
-      page.should have_selector('textarea#partyid')
+      page.should have_selector('input#partyid')
       page.should have_selector('input.get_ent')
       page.should have_selector('input.get_ent_file')
+    end
+
+    it "should have upload file button and field" do
+       visit partyid_path
+       page.should have_selector('input#upload_file')
     end
 
 

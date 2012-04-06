@@ -18,28 +18,22 @@ class Entitlements
     user_entitlement = ''
 
     if !response['entitlements'].empty?
-
-      # puts "PARTYID #{partyid} has next entitlements: #{response['entitlements']}"
-      # print "#{response['partyId']}   "
-
       response['entitlements'].each { |ent|
         user_entitlement = user_entitlement + "<item>"+ent+"</item>"
       }
-
+      result = {response['partyId'] => user_entitlement}
     end
 
 
-    result = {response['partyId'] => user_entitlement}
-
     #if result has status then check error code
     if response.has_key? 'status'
-      case result['status']['code']
+      case response['status']['code']
         when code = '2008' then
-          puts "[CODE=#{code}] Customer\'s subscription status with PartyID = #{partyid} is blocked"
+          result = {response['partyId'] => "[CODE=#{code}] Customer\'s subscription status with PartyID = #{partyid} is blocked"}
         when code = '2018' then
-          puts "[CODE=#{code}] Customer with PartyID = #{partyid} has no entitlements but is otherwise legitimate"
+          result = {response['partyId'] => "[CODE=#{code}] Customer with PartyID = #{partyid} has no entitlements but is otherwise legitimate"}
         when code = '2001' then
-          puts "[CODE=#{code}] Customer with PartyID = #{partyid} was not recognised"
+          result = {response['partyId'] => "[CODE=#{code}] Customer with PartyID = #{partyid} was not recognised"}
       end
     end
 
@@ -48,20 +42,37 @@ class Entitlements
     if response.has_key? 'Error'
       raise "web service error"
     end
-    # return response['partyId'], user_entitlement
 
     return result
+
   end
 
   def self.read_partyid
-
     CSV.read('partyid.txt').flatten!
-
   end
 
+  def self.partyids_from_file(uploaded_file)
+    # read PartyIds from uploaded file
+    partyids = []
+    uploaded_file.read.each_line { |line| partyids << line.gsub(/\n\r/, '') }
+
+    # partyids.each { |e| e.gsub!(/\n\r/, '') }
+
+    #just save uploaded file
+    File.open(Rails.root.join('public', 'uploads', uploaded_file.original_filename), 'w') do |file|
+      file.write(uploaded_file.read)
+    end
+
+    user_ent = []
+    partyids.each { |p|
+      user_ent << Entitlements.get_entitlements(p)
+    }
+
+    return user_ent
+  end
 
 end
 
 #puts Entitlements.get_entitlements(13232530212841031374657)
 
-puts Entitlements.read_partyid
+#puts Entitlements.read_partyid

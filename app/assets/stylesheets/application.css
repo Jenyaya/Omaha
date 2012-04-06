@@ -12,6 +12,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #444444;
+
 }
 
 #header {
@@ -27,9 +28,13 @@ a {
     padding-right: 15px;
 }
 
-#partyid-form, #partyid-form2  {
- background-color: #99ccff;
- width: 625px;
+#partyid-form, #file_form {
+
+    width: 625px;
+}
+
+#upload_file {
+    font-size: 1em
 }
 
 h1, h2, h3 {
@@ -41,7 +46,7 @@ h1, h2, h3 {
     color: #2483A6;
 }
 
-input.run_query, input.get_ent {
+input.run_query, input.get_ent, input.get_ent_file {
     margin: 10px;
     padding: 10px;
     margin-left: auto;
@@ -50,24 +55,10 @@ input.run_query, input.get_ent {
     text-align: center;
     width: 190px;
     color: #fff;
-    background: #006400;
+    background: #009900;
     font-size: 120%;
     font-weight: bold;
-
-}
-
-input.get_ent_file {
-    margin: 10px;
-    padding: 10px;
-    margin-left: 300px;
-    margin-right: auto;
-    display: block;
-    text-align: center;
-    width: 190px;
-    color: #fff;
-    background: #006400;
-    font-size: 120%;
-    font-weight: bold;
+    border: solid 1px #00ff00;
 
 }
 
@@ -79,14 +70,15 @@ label {
 
 }
 
-.datagrid, .ent_datagrid {
+.datagrid {
     font: normal 12px/150% Arial, Helvetica, sans-serif;
     background: #cccc00;
     overflow: hidden;
-    border: 1px solid #006699;
+    border: 1px solid #ccff99;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 3px;
+    border-collapse:collapse;
 }
 
 th.datagrid {
@@ -101,11 +93,6 @@ textarea {
     font-family: Tahoma, sans-serif;
 
 }
-
-/*table, td {*/
-/*border-width: 1px;*/
-
-/*}*/
 
 .no_result {
 
@@ -137,12 +124,18 @@ textarea {
     color: #2483A6;
 }
 
-.found_users, .found_by_query_users  {
+.found_users, .found_by_query_users {
 
-  padding-left: 50px;
+    padding-left: 50px;
 }
 
 div.ent {
-  color: #2483A6;
-  padding-left: 50px;
+    color: #2483A6;
+    padding-left: 50px;
 }
+
+table.form_table {
+ margin-left: auto;
+}
+
+

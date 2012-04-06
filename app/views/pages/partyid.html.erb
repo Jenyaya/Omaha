@@ -16,12 +16,13 @@
 <% end %>
 
 
-<%= form_tag("/entitlementsfile", :id => 'partyid-form2', :method => "get") do %>
+<%= form_tag("/entitlementsfile", :id => 'file_form', :method => "post", :multipart => true) do %>
 
 
 
     <table class="form_table">
        <tr>
+        <td><%= file_field_tag 'upload_file', :type => 'file' %></td>
         <td> <%= submit_tag("Entitlements from file", :class => "get_ent_file") %></td>
       </tr>
 

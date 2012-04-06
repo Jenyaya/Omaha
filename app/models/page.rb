@@ -8,7 +8,7 @@ class Page
 
     connect_to_db(db)
 
-    query = generate_query(username, date, ent)
+   puts query = generate_query(username, date, ent)
 
     started_seconds = Time.now.tv_sec
 
@@ -60,7 +60,7 @@ class Page
 
   def self.generate_query(username, date, ent)
       # date.nil? ? (raise 'Date is nill!') : (puts date)
-    date.nil? ? ( date = '1-JAN-2012') : (date)
+    #date.nil? ? ( date = '1-JAN-2012') : (date)
 
    query = "select distinct  sam.samprofileid, sam.username, crm.partyid, sam.registrationdate, ent.STARTDATE,
               ent.EXPIRYDATE, service.SERVICEENTMNTNAME

@@ -36,27 +36,28 @@ class PagesController < ApplicationController
   def entitlements
     @title = 'Entitlements'
     if  !params[:partyid].empty?
-       @user_ent = Entitlements.get_entitlements( params[:partyid])
+      @user_ent = Entitlements.get_entitlements(params[:partyid])
     else
-
-       render 'partyid'
+      render 'partyid'
     end
-
 
 
   end
 
   def entitlementsfile
+
     @title = 'Entitlements'
 
-    partyids = ['13232530212841031374657', '13232414127841031368648', '13232415347021031368669']
-    partyids = Entitlements.read_partyid
+    #partyids = ['13232530212841031374657', '13232414127841031368648', '13232415347021031368669']
+    #partyids = Entitlements.read_partyid
 
-    @user_ent = []
-    partyids.each { |p|
-      @user_ent << Entitlements.get_entitlements(p)
-    }
+    uploaded_io = params[:upload_file]
 
+    if  !params[:upload_file].nil?
+      @user_ent = Entitlements.partyids_from_file(uploaded_io)
+    else
+      render 'partyid'
+    end
 
 
   end
