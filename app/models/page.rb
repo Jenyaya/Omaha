@@ -8,7 +8,7 @@ class Page
 
     connect_to_db(db)
 
-   puts query = generate_query(username, date, ent)
+    query = generate_query(username, date, ent)
 
     started_seconds = Time.now.tv_sec
 
